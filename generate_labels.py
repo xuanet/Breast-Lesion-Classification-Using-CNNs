@@ -10,14 +10,17 @@ def diagnose(array):
         return "BENIGN"
     return "CANCER"
 
-file_paths = r'Validation\BCS-DBT-labels-validation-PHASE-2-Jan-2024.csv'
+# file_paths = r'Validation\BCS-DBT-labels-validation-PHASE-2-Jan-2024.csv'
+file_paths = r'Test\BCS-DBT-labels-test-PHASE-2.csv'
+
 with open(file_paths, 'r') as f:
     paths = f.readlines()[1:]
 
 paths = [line.strip().split(",") for line in paths]
 paths = np.array(paths)
 
-validation_labels = 'validation_labels.txt'
+# validation_labels = 'validation_labels.txt'
+validation_labels = 'test_labels.txt'
 with open(validation_labels, 'w') as w:
     for line in paths:
         status = diagnose(line[-4:])

@@ -1,11 +1,17 @@
 import pydicom as dicom
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 import numpy as np
 import os
-# Validation\Validation Images\manifest-1617905855234\Breast-Cancer-Screening-DBT\DBT-P00001\01-01-2000-DBT-S00597-MAMMO SCREENING DIGITAL BILATERAL-78647\16214.000000-NA-18959\1-1.dcm
-path_prefix = r"Validation\Validation Images\manifest-1617905855234"
-file_paths = r'Validation\BCS-DBT-file-paths-validation-v2.csv'
-save_path = r'Validation\Validation NPY'
+
+# path_prefix = r"Validation\Validation Images\manifest-1617905855234"
+# file_paths = r'Validation\BCS-DBT-file-paths-validation-v2.csv'
+# save_path = r'Validation\Validation NPY'
+
+
+path_prefix = r"Test\Test Images\manifest-1617905855234"
+file_paths = r'Test\BCS-DBT-file-paths-test-v2.csv'
+save_path = r'Test\Test NPY'
+
 with open(file_paths, 'r') as f:
     paths = f.readlines()[1:]
 
@@ -26,5 +32,3 @@ for i in range(total):
         np.save(s, data)
     iter += 1
     print(f"processed {iter} images")
-
-

@@ -1,3 +1,9 @@
-pydicom
+jupyter
 numpy
+pandas==1.1.4
+scikit-learn
+imageio
+scikit-image
+pydicom
+pylibjpeg
 matplotlib
