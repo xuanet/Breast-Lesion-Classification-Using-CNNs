@@ -1,22 +1,26 @@
 import numpy as np
 import scipy as sp
 import matplotlib.pyplot as plt
+from skimage.transform import resize
 
-file_path = 'Validation\Validation NPY\DBT-P00001,lcc.npy'
+
+file_path = 'Validation\Validation Boxes\DBT-P04884,lcc.npy'
 
 with open(file_path, 'rb') as f:
-    data = np.load(f)
-shape = data.shape
-slice = data[shape[0]//2]
+    slice = np.load(f)
 slice = slice / np.max(slice)
+slice[slice < 0.01] = 0
+slice = resize(slice, (225, 225))
+
 
 # reduce resolution with conv
 """the size and number of detector elements, 
 the size of the X-ray focal spot, and the
 source-object-detector distances"""
 
-lpf = np.ones(shape=(20, 20))
-filtered_slice = sp.signal.convolve2d(slice, lpf, mode='same')
+lpf = np.ones(shape=(2, 2))
+filtered_slice = sp.signal.convolve2d(slice, lpf, mode='same') / lpf.size
+
 
 # reduce contrast with norm function
 """voltage (intensity), detector sensitivity"""

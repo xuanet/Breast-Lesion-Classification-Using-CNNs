@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-# from duke_dbt_data import dcmread_image, read_boxes, draw_box
+import os
 
 def draw_box(
     image: np.ndarray,
@@ -24,18 +24,21 @@ def draw_box(
     image[y : y + height, x + width - lw : x + width] = color
     return image
 
+def load_single_image(image_path):
+    with open(image_path, 'rb') as f:
+        data = np.load(f)
+    plt.imshow(data, cmap=plt.cm.gray)
+    plt.show()
 
-file_path = 'Validation\Validation NPY\DBT-P00431,rmlo.npy'
-with open(file_path, 'rb') as f:
-    data = np.load(f)
 
-# plt.imshow(data[27,:,:], cmap='gray')
-# plt.show()
-# print(data.shape)
-# print(data.dtype)
-# print(np.max(data))
-# print(np.min(data))
+def load_directory(folder_path):
+    directory = os.fsencode(folder_path)
+    for file in os.listdir(directory):
+        filename = os.fsdecode(file)
+        image_path = os.path.join(folder_path, filename)
+        load_single_image(image_path)
     
-image = draw_box(data[27,:,:], x=1418, y=651, width=212, height=201, lw=10)
-plt.imshow(image, cmap=plt.cm.gray)
-plt.show()
+
+# load_directory('Validation\Validation Boxes')
+load_single_image('Validation\Validation Boxes\DBT-P00705,lcc.npy')
+

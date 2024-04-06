@@ -3,3 +3,6 @@ Test/
 Validation/
 __pycache__/
 duke_dbt_data.py
+.ipynb_checkpoints/
+Train/
+onclick.py
