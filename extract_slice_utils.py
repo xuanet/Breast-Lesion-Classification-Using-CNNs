@@ -59,8 +59,14 @@ def length_check(box_path, npy_path):
         filename = os.fsdecode(file)
         name = filename[:-4].split(",")
         if name in boxes_name:
-            counter += 1
-    
+            counter += boxes_name.count(name)
+            if boxes_name.count(name) > 1:
+                print(boxes_name.count(name))
+                print(name)
+
+    print(f'expected {len(boxes)}, got {counter}')
+
+
     return True if counter == len(boxes) else False, boxes_name, boxes_slice, directory
     
 def create_slices(save_path, npy_path, boxes_name, boxes_slice, directory, DEBUG, IGNORE):

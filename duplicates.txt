@@ -1,0 +1,28 @@
+Test
+
+2
+['DBT-P00715', 'lmlo']
+2
+['DBT-P00801', 'lcc']
+2
+['DBT-P00801', 'lmlo']
+2
+['DBT-P00882', 'lmlo']
+2
+['DBT-P01702', 'lcc']
+2
+['DBT-P01702', 'lmlo']
+4
+['DBT-P02511', 'lcc']
+2
+['DBT-P02511', 'lmlo']
+2
+['DBT-P02774', 'rcc']
+2
+['DBT-P03571', 'lmlo']
+2
+['DBT-P04571', 'rcc']
+2
+['DBT-P04935', 'lcc']
+2
+['DBT-P04935', 'lmlo']
