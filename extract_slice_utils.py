@@ -102,7 +102,8 @@ def create_slices(save_path, npy_path, boxes_name, boxes_slice, directory, DEBUG
         else:
             print(f'user input: {filename}')
             normal_count += 1
-            if not DEBUG and normal_count < 301:
+            print(f'normal count: {normal_count}')
+            if not DEBUG and normal_count < 201:
                 with open(img_path, 'rb') as f:
                     data = np.load(f)
                 middle_slice = data.shape[0]//2

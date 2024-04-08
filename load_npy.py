@@ -24,10 +24,12 @@ def draw_box(
     image[y : y + height, x + width - lw : x + width] = color
     return image
 
-def load_single_image(image_path):
+def load_single_image(image_path, d3=False, slice=0):
     with open(image_path, 'rb') as f:
         data = np.load(f)
-    plt.imshow(data[50], cmap=plt.cm.gray)
+    if d3:
+        data = data[slice]
+    plt.imshow(data, cmap=plt.cm.gray)
     plt.show()
 
 
@@ -39,6 +41,6 @@ def load_directory(folder_path):
         load_single_image(image_path)
     
 
-# load_directory('Validation\Validation Boxes')
-load_single_image('Test\Test NPY\DBT-P04910,lcc.npy')
+load_directory('Test\Test Boxes')
+# load_single_image('Test\Test NPY\DBT-P04910,lcc.npy')
 
