@@ -41,6 +41,6 @@ def load_directory(folder_path):
         load_single_image(image_path)
     
 
-load_directory('Test\Test Boxes')
-# load_single_image('Test\Test NPY\DBT-P04910,lcc.npy')
+# load_directory('Train\Training Boxes')
+load_single_image('Train\Training Boxes\DBT-P01302,rcc.npy')
 

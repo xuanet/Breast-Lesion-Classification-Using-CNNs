@@ -6,3 +6,16 @@ duke_dbt_data.py
 .ipynb_checkpoints/
 Train/
 onclick.py
+
+test_array_COMBINED.npy
+test_array_LOW_CONTRAST.npy
+test_array_LOW_RES.npy
+test_array_RAW.npy
+training_array_COMBINED.npy
+training_array_LOW_CONTRAST.npy
+training_array_LOW_RES.npy
+training_array_RAW.npy
+validation_array_COMBINED.npy
+validation_array_LOW_CONTRAST.npy
+validation_array_LOW_RES.npy
+validation_array_RAW.npy
