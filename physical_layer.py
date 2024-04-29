@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from skimage.transform import resize
 from matplotlib.colors import Normalize
 
-file_path = 'Validation\Validation Boxes\DBT-P00001,lmlo.npy'
+file_path = 'Validation\Validation Boxes\DBT-P00002,lcc.npy'
 
 with open(file_path, 'rb') as f:
     slice = np.load(f)
@@ -31,11 +31,11 @@ def low_contrast(image, degree):
     d = 1 + np.exp(-degree*(image-0.5))
     return 1 / d
 
-low_contrast_slice = low_contrast(slice, 4)
+low_contrast_slice = low_contrast(slice, 3)
 
 # combine low res + low contrast
 
-combined_slice = low_contrast(filtered_slice, 4)
+combined_slice = low_contrast(filtered_slice, 3)
 
 # print(slice.dtype)
 # print(filtered_slice.dtype)
