@@ -19,3 +19,6 @@ validation_array_COMBINED.npy
 validation_array_LOW_CONTRAST.npy
 validation_array_LOW_RES.npy
 validation_array_RAW.npy
+test_labels_array.npy
+training_labels_array.npy
+validation_labels_array.npy
