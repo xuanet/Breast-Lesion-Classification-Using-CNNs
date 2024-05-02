@@ -12,5 +12,5 @@ Our models were trained on Google Colaboratory using its L4 GPU. The folder cont
 ## Further notes
 We found that researchers mis-located some bounding boxes. Some mis-located images are listed in ```mislabels.txt```. During training, clearly mis-located images are omitted.
 
-
-
+## References
+Code for bounding box derived from https://github.com/mazurowski-lab/duke-dbt-data
